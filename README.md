@@ -67,7 +67,24 @@ APRENDA A TRABALHAR COM BANCO DE DADOS NO PHP, UTILIZANDO A FAMOSA E SEGURA INTE
 
 ## <a name="parte6">6 - 02 - Conexão Banco de Dados com PHP Usando PDO</a>
 
+- https://www.php.net/manual/pt_BR/pdo.connections.php
 
+```php
+<?php
+
+$dsn = "mysql";
+$host = "localhost";
+$database = "especializa_ti_phppdo";
+$user = "root";
+$pass = "";
+$port = 3306;
+
+$pdo = new PDO("{$dsn}:host={$host};port={$port};dbname={$database}", $user, $pass);
+
+var_dump($pdo);
+
+
+```
 
 [Voltar ao Índice](#indice)
 
@@ -76,7 +93,29 @@ APRENDA A TRABALHAR COM BANCO DE DADOS NO PHP, UTILIZANDO A FAMOSA E SEGURA INTE
 
 ## <a name="parte7">7 - 03 - Tratamento de Erros PHP PDO</a>
 
+```php
+<?php
 
+$dsn = "mysql";
+$host = "localhost";
+$database = "especializa_ti_phppdo";
+$user = "root";
+$pass = "";
+$port = 3306;
+
+try {
+    $pdo = new PDO("{$dsn}:host={$host};port={$port};dbname={$database}", $user, $pass);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+} catch (Throwable | PDOException $e) {
+    echo $e->getCode() . "<br>";
+    echo $e->getMessage();
+}
+
+var_dump($pdo);
+
+
+```
 
 [Voltar ao Índice](#indice)
 
