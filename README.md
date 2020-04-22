@@ -312,7 +312,24 @@ try {
 
 ## <a name="parte11">11 - 09 - Utilidades do PDO</a>
 
+- lastInsertId: http://php.net/manual/pt_BR/pdo.lastinsertid.php 
 
+- rowCount: http://php.net/manual/pt_BR/pdostatement.rowcount.php
+
+- getAvailableDrivers: http://php.net/manual/pt_BR/pdo.getavailabledrivers.php
+
+
+```php
+
+    echo $pdo->lastInsertId(); // RETORNA o ultimo ID inserido
+
+    // SELECT * FROM
+    echo $query->rowCount(); // RETORNA total de resultados da query / Total de registros
+
+    //REtora todos os drivers que o server pode trabalhar
+    var_dump(PDO::getAvailableDrivers());
+
+```
 
 [Voltar ao Índice](#indice)
 
